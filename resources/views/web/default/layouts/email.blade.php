@@ -328,7 +328,7 @@
                                                                     href="https://www.linkedin.com/company/acadima-college/posts/?feedView=all"
                                                                     target="_blank"
                                                                     style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/wp-content/uploads/2021/10/Layer-4-1.png"
+                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-4-1.png"
                                                                         width="30" height="30"
                                                                         mc:edit="image_15"
                                                                         style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
@@ -336,7 +336,7 @@
                                                                     href="https://www.instagram.com/acadimacollege"
                                                                     target="_blank"
                                                                     style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/wp-content/uploads/2021/10/Layer-5-1.png"
+                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-5-1.png"
                                                                         width="30" height="30"
                                                                         mc:edit="image_15"
                                                                         style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
@@ -344,7 +344,7 @@
                                                                     href="https://www.youtube.com/channel/UCglrBLCkL6YnRZYy69-TwUw"
                                                                     target="_blank"
                                                                     style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/wp-content/uploads/2021/10/Layer-3-1.png"
+                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-3-1.png"
                                                                         width="30" height="30"
                                                                         mc:edit="image_13"
                                                                         style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
