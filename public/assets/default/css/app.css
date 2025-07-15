@@ -4469,14 +4469,14 @@ fieldset:disabled a.btn {
 }
 .btn-acadima-primary {
     color: #fff !important;
-    background-color:var(--acadima-pink) !important;
+    background-color:var(--acadima-black) !important;
+    border-color: var(--acadima-black) !important;
+}
+.btn-acadima-primary:hover {
+    color: #fff;
+    background-color: var(--acadima-pink) !important;
     border-color: var(--acadima-pink) !important;
 }
-/* .btn-acadima-primary:hover {
-    color: #fff;
-    background-color: var(--acadima-greenblue) !important;
-    border-color: var(--acadima-greenblue) !important;
-} */
 .btn-primary {
     color: #fff;
     background-color: #43d477;
@@ -14129,7 +14129,7 @@ p {
     font-size: 16px;
     font-weight: 700;
     line-height: 1.2;
-    color: var(--acadima-pink);
+    color: var(--acadima-black);
 }
 .section-title.after-line {
     display: flex;

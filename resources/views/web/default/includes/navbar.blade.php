@@ -42,7 +42,7 @@
             <a class="navbar-brand navbar-order  align-items-center justify-content-start mr-0 {{ (empty($navBtnUrl) and empty($navBtnText)) ? 'mr-auto' : '' }}"
                 href="">
                 @if (!empty($generalSettings['logo']))
-                    <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" class="logo-img-cover" width="70%" alt="site logo">
+                    <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" class="logo-img-cover" width="30%" alt="site logo">
                 @endif
             </a>
 

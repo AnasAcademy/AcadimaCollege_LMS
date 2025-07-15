@@ -96,7 +96,7 @@
         <div class="card-header">                                
             <div class="row align-items-center">
                 <div class="col-8">
-                    <h5 class="card-title mb-0 text-pink">{{trans('panel.important_files')}}</h5>
+                    <h5 class="card-title mb-0 text-black">{{trans('panel.important_files')}}</h5>
                 </div>
                 <div class="col-4">
                     <ul class="list-inline-group text-right mb-1 pl-0">
@@ -109,7 +109,10 @@
             <div class="product-file-type">
                 <ul class="list-unstyled">
                     <li class="media mb-3">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
+                        
                         <div class="media-body">
                        <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Microsoft%20Teams%20Arabic.pdf"
                            target="_blank">
@@ -118,7 +121,9 @@
                         </div>
                     </li>
                     <li class="media mb-3">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
                         <div class="media-body">
                             <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Microsoft%20Teams%20English.pdf"
                            target="_blank">
@@ -127,7 +132,9 @@
                         </div>
                     </li>
                     <li class="media mb-3">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Outlook%20Arabic.pdf"
                            target="_blank">
@@ -135,7 +142,9 @@
                         </div>
                     </li>
                     <li class="media mb-3">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Outlook%20English.pdf"
                            target="_blank">
@@ -143,7 +152,9 @@
                         </div>
                     </li>
                      <li class="media mb-3">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/OneDrive%20English.pdf"
                            target="_blank">
@@ -151,7 +162,9 @@
                         </div>
                     </li>
                      <li class="media">
-                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">.pdf</span>
+                        <span class="mx-2 align-self-center img-icon danger-rgba text-danger">
+                          <img src="{{ asset('store/1/pdf.png') }}" alt="logo" width="100%" class="">
+                        </span>
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/OneDrive%20Arabic.pdf"
                            target="_blank">

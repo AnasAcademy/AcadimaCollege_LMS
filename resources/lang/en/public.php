@@ -203,7 +203,7 @@ return [
 
   'list' => 'List',
   'reservation' => 'Reservation',
-  'my_reservation' => 'My reservations',
+  'my_reservation' => ' My Appointments',
   'result' => 'Result',
   'results' => 'Results',
   'my_results' => 'My results',

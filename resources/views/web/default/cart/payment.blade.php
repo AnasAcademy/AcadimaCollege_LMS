@@ -13,7 +13,7 @@
     @php
         $title = "<h1 class='font-30 text-white font-weight-bold'>
             <!-- " . trans('cart.checkout') . ' --> 
-             Complete Payment
+             Reserve Your Spot Today
         </h1>';
         $subTitle = "<span class='payment-hint font-20 text-white d-block'>";
 
@@ -27,13 +27,14 @@
             $subTitle .= trans('panel.seat_reservation_fees');
             // $subTitle .= 'الرسوم الدراسية للبرنامج : '.($total).' ريال سعودي';
         } elseif (!empty($order->orderItems[0]->bundle)) {
-            $subTitle .= trans('panel.tuition_fees_program') . $order->orderItems[0]->bundle->title;
+            $subTitle .= trans('panel.tuition_fees_program');
+            // $subTitle .= trans('panel.tuition_fees_program') . $order->orderItems[0]->bundle->title;
         } elseif (!empty($order->orderItems[0]->webinar)) {
             $subTitle .= trans('panel.tuition_fees_course') . $order->orderItems[0]->webinar->title;
         }
         // close subtitle
         $subTitle .=
-            ': <span class="price"> Total payment of ' .
+            ' <span class="price">a total of ' .
             handlePrice($total) .
             '</span>    <span class="price-with-discount"></span> </span>';
     @endphp
@@ -345,8 +346,11 @@
             @endif
 
             <div class="d-flex align-items-center justify-content-between mt-45">
-                <span class="font-16 font-weight-500 text-gray">{{ trans('financial.total_amount') }}
-                    <span class="price"> {{ handlePrice($total) }}</span> <span class="price-with-discount"></span>
+                <span class="font-16 font-weight-500 text-gray">
+                    <span>Seats are filling fast for this exclusive program. Secure your place today and make sure you're in when the program begins.</span>
+                    <br/>
+                    <span class="font-weight-bold">{{ trans('financial.total_amount') }}</span>
+                    <span class="price font-weight-bold"> {{ handlePrice($total) }}</span> <span class="price-with-discount"></span>
                 </span>
                 <button type="submit" id="paymentSubmit"
                     class="btn btn-sm btn-primary">{{ trans('public.start_payment') }}</button>

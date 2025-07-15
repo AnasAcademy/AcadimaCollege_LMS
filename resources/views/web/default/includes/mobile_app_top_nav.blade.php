@@ -3,7 +3,7 @@
     <div class="container d-flex justify-content-between flex-column flex-lg-row">
         <a class="navbar-brand navbar-order mr-0 d-flex align-items-center justify-content-center" href="/">
             @if(!empty($generalSettings['logo']))
-                <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" class="img-cover" alt="site logo">
+                <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" class="img-cover" alt="site logo">
             @endif
         </a>
 

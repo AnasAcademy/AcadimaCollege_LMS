@@ -122,9 +122,9 @@
         <div class="col-12 px-0">
             <div class="col-lg-12 px-0">
                 <Section class="section1 main-section p-lg-40 pt-40 p-0 bg-transparent shadow border">
-                    <h2 class="section-title text-pink">
+                    <h2 class="section-title text-black">
                         <!-- {{ trans('panel.new_rgstr') }} -->
-                          Enrol to a new program registration request
+                          New Program Enrolment
                     </h2>
                     <div class="container_form bg-secondary-acadima">
                         <form action="/apply" method="POST" id="myForm">

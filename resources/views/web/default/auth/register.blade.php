@@ -105,6 +105,10 @@
     height:55px !important;
     padding: 5px 16px;
 }
+input:focus, input::selection {
+        background-color: #0e0e0e !important;
+        color: #fff !important;
+    }  
 </style>
     @php
         $siteGeneralSettings = getGeneralSettings();
@@ -117,7 +121,7 @@
     @endphp
     <div class="px-3 px-lg-5 py-2 m-md-3 bg-secondary-acadima col-sm-7 col-md-8 col-lg-4 border-radius-lg ltr border shadow">
         <div class="col-6 col-md-6 p-0 mb-0 mb-lg-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
-            <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+            <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
             <h1 class="font-20 font-weight-bold mb-3 mt-3 ltr">
             <svg width="34" height="29" viewBox="0 0 34 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path

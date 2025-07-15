@@ -214,7 +214,7 @@
                     <br>
                     {{trans('panel.changes_in_terms')}}
                     <br>
-                    
+                    {{trans('panel.changes_in_term')}}
                     <br>
 
                 </div>

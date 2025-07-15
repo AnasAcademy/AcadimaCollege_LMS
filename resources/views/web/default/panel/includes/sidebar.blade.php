@@ -36,8 +36,8 @@
 
         <div class="d-flex flex-column align-items-center justify-content-center">
             <a href="/panel" class="user-name mt-15">
-                <h3 class="font-16 font-weight-bold text-center text-pink">{{ $authUser->full_name }}</h3>
-                <h3 class="font-16 font-weight-bold text-center text-pink">{{ $authUser->user_code }}</h3>
+                <h3 class="font-16 font-weight-bold text-center text-black">{{ $authUser->full_name }}</h3>
+                <h3 class="font-16 font-weight-bold text-center text-black">{{ $authUser->user_code }}</h3>
             </a>
 
             @if (!empty($authUser->getUserGroup()))

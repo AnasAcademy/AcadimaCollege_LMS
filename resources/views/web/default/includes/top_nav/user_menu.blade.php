@@ -16,12 +16,11 @@
   gtag('config', 'G-WSVP27XBX1');
 </script>
 @if(!empty($authUser))
-
     <div class="custom-dropdown navbar-auth-user-dropdown position-relative">
         <div class="custom-dropdown-toggle d-flex align-items-center navbar-user cursor-pointer">
             <img src="{{ asset('store/Acadima/acad-logo.webp') }}"
             class="rounded-circle" alt="{{ $authUser->full_name }}" style="max-width: 50px;">
-        <span class="font-16 user-name ml-10 text-pink font-14">{{ $authUser->full_name }}</span>
+        <span class="font-16 user-name ml-10 text-black font-14">{{ $authUser->full_name }}</span>
         </div>
 
         <div class="custom-dropdown-body pb-10">
@@ -35,8 +34,13 @@
                 </div>
 
                 <div class="ml-5">
+                   
                     <div class="font-14 font-weight-bold text-dark">{{ $authUser->full_name }}</div>
-                    <span class="mt-5 text-gray font-12">{{ $authUser->role->caption }}</span>
+                    @if($authUser->role_name == 'registered_user')
+                        <span class="mt-5 text-gray font-12">Non registered student</span>
+                    @else
+                        <span class="mt-5 text-gray font-12">Student</span>
+                    @endif
                 </div>
             </div>
 

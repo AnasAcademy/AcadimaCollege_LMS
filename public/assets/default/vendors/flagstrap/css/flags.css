@@ -5,7 +5,7 @@
 }
 
 .flagstrap-icon {
-    display: inline-block;
+    display: none;
     width: 16px;
     height: 11px;
     background: url(flags.png) no-repeat

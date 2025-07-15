@@ -51,7 +51,7 @@
     <section class="dashboard">
 
         <div class="mt-10 d-flex align-items-start align-items-md-center justify-content-between flex-column flex-md-row">
-            <h1 class="section-title text-pink p-20">{{ trans('panel.dashboard') }}</h1>
+            <h1 class="text-black p-20">{{ trans('panel.dashboard') }}</h1>
 
             @if (!$authUser->isUser())
                 <div
@@ -80,7 +80,7 @@
 
                 <div class="bg-secondary-acadima dashboard-banner-container position-relative p-40 rounded-sm shadow border">
                     <h2 class="font-30 text-primary line-height-1">
-                        <span class="d-block">{{ trans('panel.hi') }} {{ $authUser->full_name }}</span>
+                        <span class="d-block">{{ trans('panel.hi') }}: {{ $authUser->full_name }}</span>
                     </h2>
                     @if (!$authUser->isUser())
                         <span
@@ -112,16 +112,16 @@
                         <ul class="mt-15 unread-notification-lists">
                             <h4 class="text-dark">{{ trans('panel.academic_info') }}</h4>
                             <li class="mt-1 text-gray font-16 font-weight-bold text-left">
-                                {{ trans('panel.personal_card_stucode') }} :
+                                {{ trans('panel.personal_card_stucode') }}:
                                 {{ $authUser->user_code }}</li>
                             <li class="mt-1 text-gray font-16 font-weight-bold text-left">
-                                {{ trans('panel.personal_card_email') }} :
+                                {{ trans('panel.personal_card_email') }}:
                                 {{ $authUser->user_code }}@anasacademy.uk</li>
                             <li class="mt-1 text-gray font-16 font-weight-bold text-left">
                                 {{ trans('panel.personal_card_password') }}:
                                 SD$$2025</li>
                             <li class="mt-1 text-gray font-16 font-weight-bold text-left">
-                                {{ trans('panel.study_program') }} :
+                                {{ trans('panel.study_program') }}:
 
                                 @if ($bundleSales->isNotEmpty())
                                     @foreach ($bundleSales as $bundleSale)
@@ -208,7 +208,7 @@
                                     <div class="card-header">
                                         <div class="row align-items-center">
                                             <div class="col-8">
-                                                <h5 class="card-title mb-0 text-pink">{{trans('panel.lecture_schedule')}}</h5>
+                                                <h5 class="card-title mb-0 text-black">{{trans('panel.lecture_schedule')}}</h5>
                                             </div>
                                             <div class="col-4">
                                                 <ul class="list-inline-group text-right mb-1 pl-0">
@@ -501,7 +501,7 @@
             <div class="row p-20 mt-md-20">
                 <div class="col-12 col-lg-6 px-lg-15  p-0">
                     <div class="bg-secondary-acadima noticeboard rounded-sm border shadow py-10 py-md-20 px-15 px-md-30">
-                        <h3 class="font-16 text-pink font-weight-bold">{{ trans('panel.noticeboard') }}</h3>
+                        <h3 class="font-16 text-black font-weight-bold">{{ trans('panel.noticeboard') }}</h3>
 
                         @foreach ($authUser->getUnreadNoticeboards() as $getUnreadNoticeboard)
                             <div class="noticeboard-item py-15 text-light">

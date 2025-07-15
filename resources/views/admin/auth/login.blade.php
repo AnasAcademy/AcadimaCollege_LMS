@@ -17,7 +17,7 @@
         flex-wrap: wrap;
     }
     .cs-btn{
-        background-color:#c14b93 !important;
+        background-color:#0e0e0e !important;
         width:100%;
         height:50px;
         color: #fff;
@@ -28,19 +28,25 @@
             width: 100%;
         }
     }
-    /* .cs-btn:hover{
-        background-color:#599FAF !important;
+    .cs-btn:hover{
+        background-color:#c14b93 !important;
         color: #fff;
 
-    } */
+    }
+    a{
+        color: #0e0e0e;
+    }
     a:hover{
        text-decoration:underline;
-        /* color:#599FAF !important; */
+        color:#c14b93 !important;
     }
     .bg-secondary-acadima {
         background-color: #fff !important;
     }
     .bg-button-acadima {
+        background-color: #0e0e0e !important;
+    }
+    .bg-button-acadima:hover {
         background-color: #c14b93 !important;
     }
     .text-cyan {
@@ -82,7 +88,8 @@
 
     }
     input:focus, input::selection {
-        background-color: #fdfdff !important;
+        background-color: #0e0e0e !important;
+        color: #fff !important;
     }
     .text-left {
             text-align: left !important;
@@ -90,12 +97,12 @@
 </style>
 
     <div class="p-4 m-3">
-    <div class="col-7 col-md-7 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
+    <div class="col-6 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
 
-        <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="80%" class="">
+        <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="80%" class="">
         </div>
 
-        <h4 class="text-pink font-weight-normal text-left">
+        <h4 class="text-black font-weight-normal text-left">
             <!-- {{ trans('admin/main.welcome') }}  -->
               Welcome to 
             <span class="font-weight-bold">
@@ -153,7 +160,7 @@
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" name="remember" class="custom-control-input" tabindex="3"
                            id="remember-me">
-                    <label class="custom-control-label text-pink"
+                    <label class="custom-control-label text-black"
                            for="remember-me">
                            <!-- {{ trans('auth.remember_me') }} -->
                              Remember me
@@ -171,7 +178,7 @@
 
         <div class="text-right d-flex justify-content-start text-center text-secondary">
 
-        <a href="{{ getAdminPanelUrl() }}/forget-password" class="text-pink mb-30  ltr">
+        <a href="{{ getAdminPanelUrl() }}/forget-password" class="text-black mb-30  ltr">
             <!-- {{ trans('auth.forget_your_password') }} -->
             Forgot password?
         </a>

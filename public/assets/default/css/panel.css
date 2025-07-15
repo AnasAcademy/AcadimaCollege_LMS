@@ -342,7 +342,7 @@ $custom-control-indicator-bg:$primary;*/
 .panel-sidebar .sidebar-menu .sidenav-item.sidenav-item-active > a,
 .panel-sidebar .sidebar-menu .sidenav-item.sidenav-item-active > a * {
   font-weight: bold !important;
-  color: var(--primary) !important;
+  color: var(--primary-hover) !important;
 }
 
 .panel-sidebar .sidebar-menu .sidenav-item.sidenav-item-active svg {
@@ -463,7 +463,7 @@ $custom-control-indicator-bg:$primary;*/
 
 .panel-sidebar .sidebar-menu .sidenav-item .sidenav-item-collapse li.active a {
   font-weight: bold;
-  color: var(--primary);
+  color: var(--primary-hover);
 }
 
 .panel-sidebar .sidebar-menu .sidenav-item .sidenav-item-collapse li.active:before {

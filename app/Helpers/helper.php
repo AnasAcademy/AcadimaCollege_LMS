@@ -277,7 +277,7 @@ function getLanguages($lang = null)
         "AF" => 'Afrikanns',
         "SQ" => 'Albanian',
         "AM" => 'Amharic',
-        "AR" => 'Arabic',
+        "AR" => 'العربية',
         "HY" => 'Armenian',
         "AY" => 'Aymara',
         "AZ" => 'Azerbaijani',
@@ -1671,7 +1671,20 @@ function sendNotification($template, $options, $user_id = null, $group_id = null
 
         if (!empty($options['[c.title]'])) {
             if($options['[c.title]'] == "سند سداد") {
-                $notificationTemplate->template = "تهانينا تم سدادكم قسط البرنامج [c.bundle] بقيمة [amount]";
+                $notificationTemplate->template = 
+                "Hi, 
+                <br>
+                Congratulations! We are pleased to inform you that you have successfully enrolled in the [c.bundle] at Acadima College. 
+                <br>
+                This marks the beginning of an exciting learning journey, and we’re honored to have you with us. Our team is committed to supporting you every step of the way as you work toward your academic and professional goals. 
+                <br>
+                If you have any questions or need assistance, please don’t hesitate to contact us at lms@acadimacollege.com .
+                <br>
+                Once again, welcome to Acadima College. We look forward to seeing all that you will accomplish. 
+                <br>
+                Warm regards, 
+                <br>
+                Acadima College Admission Team";
             }
             // if ($options['[c.title]'] == "رسوم حجز مقعد دراسي" && !empty($options['[c.early]'])) {
 

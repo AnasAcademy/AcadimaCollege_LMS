@@ -1047,7 +1047,23 @@ class UserController extends Controller
 
         return view(getTemplate() . '.panel.requirements.payment_step', ['studentBundles' => $studentBundles, 'bundleInstallments' => $bundleInstallments ?? null]);
     }
-
+    public function destroyRegister($id)
+    {
+        $user = auth()->user();
+        $student = $user->student;
+ 
+        $studentBundle = BundleStudent::where('bundle_id', $id)
+            ->where('student_id', $student->id)
+            ->first();
+ 
+        if (!$studentBundle) {
+            return back()->withErrors(['msg' => 'لم يتم العثور على التسجيل.']);
+        }
+ 
+        $studentBundle->delete();
+ 
+        return redirect()->back()->with('success', 'تم حذف التسجيل بنجاح.');
+    }
     public function appliedCourses()
     {
 

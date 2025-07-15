@@ -17,7 +17,7 @@
         flex-wrap: wrap;
     }
     .cs-btn{
-        background-color:#c14b93 !important;
+        background-color:#0e0e0e !important;
         width:100%;
         height:50px;
         color: #fff;
@@ -33,16 +33,19 @@
 
     } */
     a {
-            color: #c14b93 !important;
+            color: #0e0e0e !important;
         }
-    /* a:hover{
+    a:hover{
        text-decoration:underline;
-        color:#599FAF !important;
-    } */
+        color:#c14b93 !important;
+    }
     .bg-secondary-acadima {
         background-color: #fff !important;
     }
     .bg-button-acadima {
+        background-color: #0e0e0e !important;
+    }
+    .bg-button-acadima:hover {
         background-color: #c14b93 !important;
     }
     .text-cyan {
@@ -83,13 +86,14 @@
         border: none;
 
     }
-    input:focus, input::selection {
-        background-color: #fdfdff !important;
-    }
+   input:focus, input::selection {
+        background-color: #0e0e0e !important;
+        color: #fff !important;
+    }   
 </style>
     <div class="p-3 p-lg-5 m-md-3 bg-secondary-acadima border-radius-lg col-sm-7 col-md-8 col-lg-4 shadow border " >
-        <div class="col-7 col-md-7 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
-            <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+        <div class="col-6 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
+            <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
             
         </div>
 
@@ -158,7 +162,7 @@
 
 
             <div class="text-right forgetpw d-flex justify-content-end text-center text-secondary">
-                <a href="/forget-password" target="_blank" class="text-pink mb-30">Forgot password?</a>
+                <a href="/forget-password" target="_blank" class="text-black mb-30">Forgot password?</a>
                 <!-- <span class="text-dark"> | </span>
                 {{-- <span style="width: 2px; height: 22px;" class="bg-dark"></span> --}} -->
                 <!-- <a href="https://anasacademy.uk/certificate/certificate-check.php" target="_blank" class="text-cyan">Certificate Verification</a> -->
@@ -198,7 +202,7 @@
         <div class="mt-20 text-center registertext">
             <span>Don't have an account?</span>
             <br>
-            <a href="/register?{{  request()->getQueryString() }}" class="font-weight-bold text-pink">
+            <a href="/register?{{  request()->getQueryString() }}" class="font-weight-bold text-black">
                 <!-- {{ trans('auth.signup') }} -->
                   Register
             </a>

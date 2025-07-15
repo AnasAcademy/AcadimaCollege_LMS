@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\panel\StripeConnectController;
+use App\Http\Controllers\Panel\UserController;
 use App\Models\InstallmentOrder;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\LearningPageController;
@@ -324,6 +325,7 @@ Route::group(['namespace' => 'Panel', 'prefix' => 'panel', 'middleware' => ['che
     Route::group(['prefix' => 'requirements'], function () {
         Route::get('/', 'UserController@requirementIndex');
         Route::get('/applied', 'UserController@requirementPaymentStep');
+        Route::post('/studentBundles/{id}', [UserController::class, 'destroyRegister'])->name('studentBundles.destroy');
         Route::get('/step/1', 'UserController@requirementIndex');
         Route::get('/step/2', 'UserController@account');
     });

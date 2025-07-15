@@ -20,7 +20,7 @@
 
     <div class="row login-container p-md-4 m-md-3">
         <div class="col-7 col-md-7 p-0 mb-5 mt-3 mt-md-auto">
-            <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+            <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
         </div>
         <div class="col-12">
 

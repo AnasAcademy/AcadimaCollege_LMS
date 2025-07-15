@@ -39,15 +39,30 @@
 
                 <section
                     class="bg-secondary-acadima position-relative col-xl-9 col-12 justify-content-center align-items-center rounded-sm mb-80 py-35 px-0 shadow border">
-                    <h2 class="mb-25 col-12 text-pink">
-                        {{ clean($bundleData['bundle']->bundle->title, 't') }}
+                    <div class="mb-25 col-12 row justify-content-between align-items-center">
+                        <h2 class=" col-11 px-30 text-black">
+                            {{ $bundleData['bundle']->bundle->title, 't' }}
 
-                        {{-- @if (!$bundleData['bundle']->bundle->checkUserHasBought(auth()->user()) && $bundleData['bundle']->bundle->early_enroll != 1)
+                            {{-- @if (!$bundleData['bundle']->bundle->checkUserHasBought(auth()->user()) && $bundleData['bundle']->bundle->early_enroll != 1)
                             <span class="font-14 font-weight-bold text-center text-danger mt-15 discount pr-2">
                                 خصم 30%
                             </span>
                         @endif --}}
-                    </h2>
+                        </h2>
+                        
+        @if (empty($bundleData['bundle']->class_id) && empty($bundleData['bundle']->bridging))
+                        <form action="{{ route('studentBundles.destroy', $bundleData['bundle']->bundle->id) }}" method="POST"
+                            class="">
+                            @csrf
+
+                            <button type="submit" class="border-0 bg-transparent"
+                                onclick="return confirm('هل أنت متأكد من حذف التسجيل؟')">
+                                <img src="{{ asset('store/1/bin.svg') }}" alt="logo" width="100%" class="">
+                            </button>
+                        </form>
+                         @endif   
+
+                    </div>
 
 
                     @if ($bundleData['bundle']->status == 'pending')

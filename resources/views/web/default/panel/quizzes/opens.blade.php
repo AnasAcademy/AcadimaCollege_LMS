@@ -92,7 +92,7 @@
                                                     <img src="{{ $quiz->creator->getAvatar() }}" class="img-cover" alt="">
                                                 </div>
                                                 <div class=" ml-5">
-                                                    <span class="d-block text-pink font-weight-500">{{ $quiz->creator->full_name }}</span>
+                                                    <span class="d-block text-black font-weight-500">{{ $quiz->creator->full_name }}</span>
                                                     <span class="mt-5 font-12 text-black d-block">{{ $quiz->creator->email }}</span>
                                                 </div>
                                             </div>

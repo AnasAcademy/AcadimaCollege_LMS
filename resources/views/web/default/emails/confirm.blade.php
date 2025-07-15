@@ -286,16 +286,16 @@
                                             </tr>
                                         </table> <!-- END Header --> <!--content-->
                                         <table class="message" width="100%" border="0" cellspacing="0"
-                                            cellpadding="0" style="direction: rtl !important; text-align: right;">
+                                            cellpadding="0" style="direction: ltr !important; text-align: right;">
                                             <tr>
                                                 <td style="padding:0px 10px;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                        style="direction: rtl !important;min-width: 100% !important;">
+                                                        style="direction: ltr !important;min-width: 100% !important;">
                                                         <tr>
                                                             <td class="social-title pb30"
                                                                 style="color:#ffffff; font-family: 'IBM Plex Sans', sans-serif; font-size:14px; line-height:22px; text-align:right; padding-bottom:30px;">
                                                                 <div mc:edit="text_33"
-                                                                    style="color: #333; direction: rtl !important;">
+                                                                    style="color: #333; direction: ltr !important;">
 
                                                                     <br><br>
                                                                     <p
@@ -308,7 +308,7 @@
                                                                         مرحبا {{ $name }},
                                                                     </p>
                                                                     <p
-                                                                        style="font-family: cairo, sans-serif; direction: rtl !important; text-align: right;">
+                                                                        style="font-family: cairo, sans-serif; direction: ltr !important; text-align: right;">
                                                                         {!! $body !!}
                                                                     </p>
 

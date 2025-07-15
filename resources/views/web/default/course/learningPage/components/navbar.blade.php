@@ -16,7 +16,7 @@
         <div class="">
             <a class="navbar-brand d-flex align-items-center justify-content-center mr-0" href="/">
                 @if(!empty($generalSettings['logo']))
-                    <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" class="img-cover" alt="site logo">
+                    <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" class="img-cover" alt="site logo">
                 @endif
             </a>
 
@@ -29,7 +29,7 @@
 
         <div class="learning-page-progress-card d-flex flex-column">
             <a href="" class="learning-page-navbar-title">
-                <span class="font-weight-bold text-pink">{{ $course->title }}</span>
+                <span class="font-weight-bold text-black">{{ $course->title }}</span>
             </a>
 
             @if ($user->isUser())

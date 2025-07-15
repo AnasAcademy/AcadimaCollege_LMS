@@ -65,7 +65,7 @@
                             <div class="webinar-card-body w-100 d-flex flex-column">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a  target="_blank">
-                                        <h3 class="font-16 text-pink font-weight-bold">{{ $webinar->title }}
+                                        <h3 class="font-16 text-black font-weight-bold">{{ $webinar->title }}
                                             <span class="badge badge-dark ml-10 status-badge-dark text-dark">{{ trans('webinars.'.$webinar->type) }}</span>
                                         </h3>
                                     </a>

@@ -78,7 +78,7 @@
                             <div class="webinar-card-body w-100 d-flex flex-column bg-secondary-acadima">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a  target="_blank">
-                                        <h3 class="font-16 text-pink font-weight-bold">{{ $bundle->title }}</h3>
+                                        <h3 class="font-16 text-black font-weight-bold">{{ $bundle->title }}</h3>
                                     </a>
 
                                     @if($authUser->id == $bundle->creator_id or $authUser->id == $bundle->teacher_id or $bundle->isPartnerTeacher($authUser->id))

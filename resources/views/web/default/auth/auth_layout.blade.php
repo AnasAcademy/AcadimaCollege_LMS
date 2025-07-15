@@ -128,7 +128,7 @@
 
         </section> --}}
 
-         <section class="section">
+         <section class="section content">
             <div class="bg-primary-acadima col-12 h-100 d-flex justify-content-center align-items-center">
                 <!-- <div class="p-md-3 order-lg-1 order-2 content text-dark col-12"> -->
 

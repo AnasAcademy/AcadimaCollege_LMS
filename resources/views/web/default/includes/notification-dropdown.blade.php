@@ -32,7 +32,7 @@
                     @foreach($unReadNotifications as $unReadNotification)
                         <a href="/panel/notifications?notification={{ $unReadNotification->id }}">
                             <div class="navbar-notification-item border-bottom">
-                                <h4 class="font-14 font-weight-bold text-dark">{{ $unReadNotification->title }}</h4>
+                                <h4 class="font-14 font-weight-bold text-dark">Thank you for enrolling in {{ $unReadNotification->title }}</h4>
                                 <span class="notify-at d-block mt-5">{{ dateTimeFormat($unReadNotification->created_at,'j M Y | H:i') }}</span>
                             </div>
                         </a>
@@ -49,7 +49,7 @@
 
             @if(!empty($unReadNotifications) and count($unReadNotifications))
                 <div class="mt-10 navbar-notification-action">
-                    <a href="/panel/notifications" class="btn btn-sm btn-block bg-acadima-pink">{{ trans('notification.all_notifications') }}</a>
+                    <a href="/panel/notifications" class="btn btn-sm btn-block btn-acadima-primary">{{ trans('notification.all_notifications') }}</a>
                 </div>
             @endif
         </div>

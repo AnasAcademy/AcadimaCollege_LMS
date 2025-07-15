@@ -20,7 +20,7 @@ return [
     'total_income' => 'Total income',
     'income' => 'Income',
     'show_only_webinars' => 'Show only courses',
-    'total_amount' => 'Total Amount',
+    'total_amount' => 'Total Amount Payable Today',
     'total_sales' => 'Total sales',
     'sales_no_result' => 'Your sales list is empty...',
     'sales_no_result_hint' => 'Your sales history will be displayed here.',

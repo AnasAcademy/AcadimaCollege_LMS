@@ -16,7 +16,7 @@
         flex-wrap: wrap;
     }
         .cs-btn {
-            background-color: #c14b93 !important;
+            background-color: #0e0e0e !important;
             width:100%;
         height:50px;
         color: #fff;
@@ -57,12 +57,12 @@
             color: #000;
         }
         a {
-            color: #c14b93 !important;
+            color: #0e0e0e !important;
         }
-        /* a:hover {
-            color: #599FAF !important;
-
-        } */
+       a:hover{
+       text-decoration:underline;
+        color:#c14b93 !important;
+    }
         .bg-secondary-acadima {
             background-color: #fff !important;
         }
@@ -97,6 +97,9 @@
         .border-none {
             border: none;
         }
+        .bg-button-acadima:hover {
+        background-color: #c14b93 !important;
+    }
         input:-internal-autofill-selected {
         background-color: #fdfdff !important;
     }
@@ -105,6 +108,10 @@
         height:55px !important;
         padding: 5px 16px;
     }
+    input:focus, input::selection {
+        background-color: #0e0e0e !important;
+        color: #fff !important;
+    }  
     </style>
     @php
         $siteGeneralSettings = getGeneralSettings();
@@ -115,9 +122,9 @@
         $showCertificateAdditionalInRegister = getFeaturesSettings('show_certificate_additional_in_register') ?? false;
         $selectRolesDuringRegistration = getFeaturesSettings('select_the_role_during_registration') ?? null;
     @endphp
-    <div class="px-3 px-lg-5 py-2 m-md-3 bg-secondary-acadima col-sm-7 col-md-8 col-lg-4 border-radius-lg ltr border shadow">
+    <div class="p-3 p-lg-5 py-2 m-md-3 bg-secondary-acadima col-sm-7 col-md-8 col-lg-4 border-radius-lg ltr border shadow">
         <div class="col-6 col-md-6 p-0 mb-0 mb-lg-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
-            <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+            <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
             
         </div>
 
@@ -413,7 +420,7 @@
             <span>
                  Already have an account?
                 <br>
-                <a href="/login?{{  request()->getQueryString() }}" class="text-pink font-weight-bold">Login</a>
+                <a href="/login?{{  request()->getQueryString() }}" class="text-black font-weight-bold">Login</a>
             </span>
         </div>
 

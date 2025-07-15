@@ -28,7 +28,7 @@
         @if (!empty($sales) and !$sales->isEmpty())
             <div
                 class="d-flex align-items-start align-items-md-center justify-content-between flex-column flex-md-row mt-50 mt-lg-80 ">
-                <h2 class="section-title text-pink">{{ trans('panel.registered_programs') }} </h2>
+                <h1 class="section-title text-black">{{ trans('panel.registered_programs') }} </h1>
             </div>
             @foreach ($sales as $sale)
                 @php
@@ -49,7 +49,7 @@
                     <section class="mb-80">
                         <div class="d-flex justify-content-between align-items-center mt-30">
 
-                            <h2 class="section-title after-line text-pink">{{ trans('product.courses') }} {{ $item->title }}</h2>
+                            <h2 class="section-title after-line text-pink"> {{ $item->title }}</h2>
                             @if ($item->content_table && $item->start_date <= time() && $hasActiveWebinars && $sale->access_to_purchased_item)
                                 <a href="{{ $item->content_table }}" class="text-cyan  mr-50 font-weight-bold"
                                     target="_blank" style="font-size:18px">
@@ -69,7 +69,7 @@
                                         <table class="table table-striped text-center font-14 text-dark">
 
                                             <tr>
-                                                <th>ID</th>
+                                                <th>Module ID</th>
                                                 <th>{{trans('panel.course_name')}}</th>
                                                 {{-- <th class="text-left">{{ trans('public.instructor') }}</th> --}}
                                                 <th>{{ trans('public.start_date') }}</th>

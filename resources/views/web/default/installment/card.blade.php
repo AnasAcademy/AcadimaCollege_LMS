@@ -7,15 +7,15 @@
 <div class="installment-card p-15 w-100 h-100">
     <div class="row">
         <div class="col-12">
-            <h4 class="font-16 font-weight-bold text-pink text-center">
+            <h4 class="font-16 font-weight-bold text-black text-center">
                 <!-- {{ $installment->main_title }} -->
-                  Early Registration Installment Plan
+                Early Registration Installment Plan
             </h4>
 
             <div class="">
                 <p class="text-dark font-14 text-center">
                     <!-- {{ nl2br($installment->description) }} -->
-                      Affordable Installment Plan
+                    Affordable Installment Plan
                 </p>
             </div>
 
@@ -96,10 +96,13 @@
                         {{ !empty($installment->upfront) ? trans('update.amount_upfront', ['amount' => handlePrice($installment->getUpfront($itemPrice))]) . ($installment->upfront_type == 'percent' ? " ({$installment->upfront}%)" : '') : trans('update.no_upfront') }}
                     </div>
 
-                    @foreach ($installment->steps as $installmentStep)
+                    @foreach ($installment->steps as $index => $installmentStep)
                         <div class="installment-step d-flex align-items-center font-12 text-gray">
-                            {{ $installmentStep->getDeadlineTitle($itemPrice, $itemId) }}</div>
+
+                            {{ $installmentStep->getDeadlineTitle($itemPrice, $itemId, $index, count($installment->steps)) }}
+                        </div>
                     @endforeach
+
                 </div>
 
                 <a href="/installments/{{ $installment->id }}?item={{ $itemId }}&item_type={{ $itemType }}&{{ http_build_query(request()->all()) }}"

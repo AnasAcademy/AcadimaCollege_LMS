@@ -279,20 +279,20 @@
                                             cellpadding="0" bgcolor="#fff">
                                             <tr align="center">
                                                 <td
-                                                    style="padding: 14px;border-radius:12px 12px 0 0; border:none; background-repeat: no-repeat;background-size:cover; background-color:#c14b93; background-image: url('{{ asset('store/Acadima/Header005.png') }}'); ">
+                                                    style="padding: 14px;border-radius:12px 12px 0 0; border:none; background-repeat: no-repeat;background-size:cover; background-color:#c14b93; background-image: url('{{ asset('store/Acadima/checkout-bg.webp') }}'); ">
                                                     <img class="img" width="20%"
-                                                        src="{{ asset('store/1/logoo.png') }}"
+                                                        src="{{ asset('store/Acadima/Acadima-White.png') }}"
                                                         class="img-cover"
                                                     > 
                                                 </td>
                                             </tr>
                                         </table> <!-- END Header --> <!--content-->
                                         <table class="message" width="100%" border="0" cellspacing="0"
-                                            cellpadding="0" style="direction: rtl !important; text-align: right; background-color: #fff; color: #000">
+                                            cellpadding="0" style="direction: ltr !important; text-align: right; background-color: #fff; color: #000">
                                             <tr>
                                                 <td style="padding:0px 10px;">
                                                     <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                        style="direction: rtl !important;min-width: 100% !important;">
+                                                        style="direction: ltr !important;min-width: 100% !important;">
                                                         <tr class="text-light">
                                                             @yield('body')
                                                         </tr>
@@ -305,49 +305,59 @@
                                             bgcolor="#fff" style="border-radius:0 0 12px 12px">
                                             <tr>
                                                 <td class="footer"
-                                                    style="padding:0px 20px; background-color: #0e0e0e; background-repeat: no-repeat; border-collapse:collapse; font-size:0px;line-height:0px; background-size:100% 100%;border-radius: 0 0 12px 12px;">
+                                                    style="padding:0px 20px; background-color: #0e0e0e;  background-image: url('{{ asset('store/Acadima/checkout-bg.webp') }}'); background-repeat: no-repeat; border-collapse:collapse; font-size:0px;line-height:0px; background-size:100% 100%;border-radius: 0 0 12px 12px;">
 
                                                     <table width="100%" border="0" cellspacing="0"
                                                         cellpadding="0">
-                                                        <tr style="display: flex; padding:10px;">
+                                                        <tr style="display: flex; padding:10px; justify-content: space-between; align-items:center">
                                                             <td class="img" width="50%"><a
                                                                     href="https://anasacademy.uk/" target="_blank"
                                                                     style="color: #fff; text-decoration: none; height:auto;">
                                                                     <img class="img-cover"
-                                                                    src="{{ asset('store/1/logoo.png') }}"
+                                                                    src="{{ asset('store/Acadima/Acadima-White.png') }}"
                                                                     alt="logoo"
                                                                     style="float: left !important;-ms-interpolation-mode: bicubic;height:auto;padding:10px; width: 135px !important;" /></a>
                                                             </td>
 
                                                             <td class="img d"
                                                                 style="text-align: right;padding-top: 10px; float: right;"
-                                                                width="50%"><a
+                                                                width="50%">
+                                                                <a
                                                                     href="https://x.com/acadimacollege"
                                                                     target="_blank"
-                                                                    style="color: #141F25; text-decoration: none;"></a><a
-                                                                    href="https://www.linkedin.com/company/acadima-college/posts/?feedView=all"
-                                                                    target="_blank"
-                                                                    style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-4-1.png"
-                                                                        width="30" height="30"
+                                                                     style=" text-decoration: none;"><img
+                                                                        src="{{ asset('store/1/x.png') }}"
+                                                                        width="15" height="15"
                                                                         mc:edit="image_15"
-                                                                        style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
-                                                                        border="0" alt=""></a><a
-                                                                    href="https://www.instagram.com/acadimacollege"
+                                                                        style=" max-width: 40px; margin: 0 5px !important;background:#fff; padding: 5px; border-radius: 50%;"
+                                                                        border="0" alt=""></a>
+                                                                    
+                                                                <a
+                                                                    href="https://www.linkedin.com/company/acadima-college/"
                                                                     target="_blank"
                                                                     style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-5-1.png"
-                                                                        width="30" height="30"
+                                                                        src="{{ asset('store/1/ln.png') }}"
+                                                                        width="15" height="15"
                                                                         mc:edit="image_15"
-                                                                        style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
-                                                                        border="0" alt=""></a><a
-                                                                    href="https://www.youtube.com/channel/UCglrBLCkL6YnRZYy69-TwUw"
+                                                                        style=" max-width: 40px; margin: 0 5px !important;background:#fff; padding: 5px; border-radius: 50%;"
+                                                                        border="0" alt=""></a>
+                                                                <a
+                                                                    href="https://www.instagram.com/acadimacollege/"
                                                                     target="_blank"
                                                                     style="color: #141F25; text-decoration: none;"><img
-                                                                        src="https://anasacademy.uk/old/wp-content/uploads/2021/10/Layer-3-1.png"
-                                                                        width="30" height="30"
+                                                                        src="{{ asset('store/1/ig.png') }}"
+                                                                        width="12" height="15"
+                                                                        mc:edit="image_15"
+                                                                        style=" max-width: 40px; margin: 0 5px !important;background:#fff; padding: 5px; border-radius: 50%;"
+                                                                        border="0" alt=""></a>
+                                                                <a
+                                                                    href="https://www.facebook.com/profile.php?id=61575312548855"
+                                                                    target="_blank"
+                                                                    style="color: #141F25; text-decoration: none;"><img
+                                                                        src="{{ asset('store/1/fb.png') }}"
+                                                                        width="12" height="15"
                                                                         mc:edit="image_13"
-                                                                        style="-ms-interpolation-mode: bicubic; max-width: 40px; margin: 0 5px !important;"
+                                                                        style=" max-width: 40px; margin: 0 5px !important;background:#fff; padding: 5px; border-radius: 50%;"
                                                                         border="0" alt=""></a>
                                                             </td>
                                                         </tr>

@@ -28,14 +28,15 @@
 
         <div class="col-12 mb-md-0 mb-20">
             <div class="installment-card p-15 w-100 h-100">
+
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="font-16 font-weight-bold text-pink">
+                        <h4 class="font-16 font-weight-bold text-black text-center">
                             {{ $mainTitle }}
                         </h4>
 
                         <div class="">
-                            <p class="text-dark font-14 text-ellipsis">
+                            <p class="text-dark font-14 text-ellipsis text-center">
                                 {{ $subTitle }}
                             </p>
                         </div>
@@ -64,10 +65,12 @@
         {{-- direct buy --}}
         <div
             class="col-12 mb-md-0 mb-20 {{ !empty($bundleData['installments']) && count($bundleData['installments']) ? 'col-md-6' : '' }}">
+
             <div class="installment-card p-15 w-100 h-100">
+
                 <div class="row">
                     <div class="col-12">
-                        <h4 class="font-16 font-weight-bold text-pink text-center">
+                        <h4 class="font-16 font-weight-bold text-black text-center">
                             {{ trans('panel.early_registration_fee') }}
                         </h4>
 
@@ -81,6 +84,7 @@
 
                     <div class="col-12 p-0">
                         <div class="installment-card__payments d-flex flex-column w-100 pt-0">
+
 
                             <div class="d-flex align-items-center justify-content-center flex-column order-1">
                                 @if ($bundleData['bundle']->bundle->price > 0)
@@ -130,14 +134,18 @@
                                 @endif
                             </div>
 
-
                             <div class=" mb-15 order-3">
                                 <div class="d-flex align-items-center font-12 text-gray">
                                     @if (!($hasBought or !empty($bundleData['bundle']->bundle->getInstallmentOrder())))
                                         <section class="bundle-details mt-3 order-3 col-12">
                                             <p class="bundle-details text-dark mt-10">
                                                 <!-- {{ trans('panel.online_program_100') }} -->
-                                                  Single payment to enroll in the program
+                                                Secure your place in the program with a single, one-time payment that
+                                                covers your full enrolment.
+                                                <br />
+                                                By choosing the one-time payment option, you simplify your registration
+                                                process and ensure uninterrupted access to the complete program
+                                                experience — with no recurring fees.
                                             </p>
 
                                             {{-- <p class="bundle-details text-pink mt-10">
@@ -209,10 +217,12 @@
 
         @if (empty($bundleData['bundle']->class_id) && empty($bundleData['bundle']->bridging))
             <div class="text-center mx-auto mt-15">
-                <p class="text-pink font-weight-bold">{{trans('panel.or')}}</p>
-                <p class="text-dark font-14 text-ellipsis">Not ready to pay now, dont miss out reserve your place today and pay later </p>
+                
+                <p class="text-pink font-weight-bold">{{ trans('panel.or') }}</p>
+                <p class="text-dark font-14 text-ellipsis">Not ready to pay now, dont miss out reserve your place today
+                    and pay later </p>
                 <a href="/panel/{{ $bundleData['bundle']->bundle->id }}/book_seat"
-                    class="btn btn-acadima-primary mx-auto mt-5">{{trans('panel.reserve_seat_here')}}  </a>
+                    class="btn btn-acadima-primary mx-auto mt-5">{{ trans('panel.reserve_seat_here') }} </a>
             </div>
         @endif
 

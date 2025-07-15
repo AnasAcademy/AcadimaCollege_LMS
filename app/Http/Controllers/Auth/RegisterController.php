@@ -187,7 +187,7 @@ class RegisterController extends Controller
             ],
             'email' => 'required|email|max:255|unique:users',
             // 'full_name' => 'required|string|regex:/^[\p{Arabic} ]+$/u|max:255|min:5',
-            'en_name' => 'required|string|max:255|min:10',
+            'en_name' => 'required|string|max:255|min:2',
             'password' => 'required|string|min:6',
             // 'password_confirmation' => 'required|same:password',
             // 'email_confirmation' => 'required|same:email',
@@ -418,8 +418,15 @@ class RegisterController extends Controller
             return $response;
         }
         $data['title'] = "Create a new account";
-        $data['body'] = " Congratulations, your account has been created in acadima.
+        $data['body'] = " Hi, $user->en_name
                             <br>
+                            Congratulations, your Acadima College account has been created.
+                            <br>
+                            You now have access to your personal student dashboard, where you can explore available programs, manage your enrolment, and access course materials once you're registered. 
+                            <br>
+                            Need help or have questions? Our support team is here to assist you—reach out anytime at lms@acadimacollege.com
+                            <br>
+                            Welcome to the Acadima College community. We’re excited to support you on your learning journey! 
                             <br>
                             You can log in through this link
                             <a href='https://lms.acadimacollege.com/login' class='btn btn-danger'>Login </a>
@@ -429,11 +436,12 @@ class RegisterController extends Controller
                             <span style='font-weight:bold;'>Email Address : </span> $user->email
                             <br>
                              <span style='font-weight:bold;'>Password : </span>" . $request['password'] .
-            "<br>
+                        "<br> Warm regards, 
+                        <br> Acadima College Admission Team 
                 ";
-        if (!empty($user) and !empty($user->email) and env('APP_ENV') == 'production') {
-            Mail::to($user->email)->send(new SendNotifications(['title' => $data['title'] ?? '', 'message' => $data['body'] ?? '']));
-        }
+        // if (!empty($user) and !empty($user->email) and env('APP_ENV') == 'production') {
+        //     Mail::to($user->email)->send(new SendNotifications(['title' => $data['title'] ?? '', 'message' => $data['body'] ?? '']));
+        // }
 
         //    dd("stop here");
         // if(!empty($request->webinar_id)){

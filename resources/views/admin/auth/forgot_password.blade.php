@@ -20,6 +20,12 @@
             background-color: #fff !important;
 
         }
+        a{
+             color: #000 !important;
+        }
+        a:hover {
+            color:#c14b93 !important;
+        }
         .border-radius-lg {
             border-radius: 20px !important;
         }
@@ -30,17 +36,17 @@
             color: #000 !important;
         }
         .cs-btn{
-        background-color:#c14b93 !important;
+        background-color:#0e0e0e !important;
         width:100%;
         height:50px;
         color: #fff;
 
     }
    
-    /* .cs-btn:hover{
-        background-color:#599FAF !important;
+    .cs-btn:hover{
+        background-color:#c14b93 !important;
         color: #fff;
-    } */
+    }
         .text-cyan {
             color: #CCF5FF;
         }
@@ -80,16 +86,20 @@
         .text-left {
             text-align: left !important;
         }
+        input:focus, input::selection {
+        background-color: #0e0e0e !important;
+        color: #fff !important;
+    }  
 
     </style> 
 
     <div class="p-4 m-3">
-    <div class="col-7 col-md-7 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
+    <div class="col-6 p-0 mb-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
 
-        <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+        <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
         </div>
 
-        <h4 class="text-left text-pink">
+        <h4 class="text-left text-black">
             <!-- {{ trans('auth.forget_password') }} -->
               Forgot Password
         </h4>
@@ -131,7 +141,7 @@
 
         <div class="text-center mt-1">
             <span class="text-secondary">
-                <a href="{{ getAdminPanelUrl() }}/login" class="text-pink font-weight-bold">
+                <a href="{{ getAdminPanelUrl() }}/login" class="text-black font-weight-bold">
                     <!-- {{ trans('auth.login') }} -->
                     Login
                 </a>

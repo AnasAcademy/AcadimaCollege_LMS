@@ -1399,8 +1399,10 @@ return [
 'submit_request' => 'Submit a request',
 'percent_interest' => ':percent% Interest',
 'no_upfront' => 'No upfront!',
-'amount_upfront' => ':amount Upfront',
-'amount_after_n_days' => ':amount after :days days :percent',
+'amount_upfront' => ':amount  Registration Fee',
+// 'amount_after_n_days' => ':amount after :days days :percent',
+'amount_after_n_days' => ':amount :title due date :days',
+
 'installment_approval' => 'Installment Verification',
 'enable_installments' => 'Enable Installments',
 'installments_settings' => 'Installments Settings',

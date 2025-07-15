@@ -31,28 +31,28 @@
             color: #000 !important;
         }
         .cs-btn{
-        background-color:#c14b93 !important;
+        background-color:#0e0e0e !important;
         width:100%;
         height:50px;
         color: #fff;
 
     }
    
-    /* .cs-btn:hover{
-        background-color:#599FAF !important;
+    .cs-btn:hover{
+        background-color:#c14b93 !important;
         color: #fff;
 
-    } */
+    }
         .text-cyan {
             color: #CCF5FF;
         }
         .text-cyan:hover {
             color: #ccf5ffa4;
         }
-        .text-pink {
+        /* .text-pink {
         color: #c14b93 !important;
         font-size:16px;
-        }
+        } */
         .ltr {
         direction: ltr;
     }
@@ -79,12 +79,24 @@
     .ltr {
             direction: ltr;
         }
+        input:focus, input::selection {
+        background-color: #0e0e0e !important;
+        color: #fff !important;
+    }  
+    a {
+            color: #0e0e0e !important;
+        }
+       a:hover{
+       text-decoration:underline;
+        color:#c14b93 !important;
+    }
     </style>
 
 
-    <div class="login-container p-3 p-lg-5 m-md-3 bg-secondary-acadima border-radius-lg shadow border">
-        <div class="col-7 col-md-7 p-0 mb-0 mb-lg-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
-            <img src="{{ asset('store/Acadima/acadima-logo.webp') }}" alt="logo" width="100%" class="">
+    <div class="login-container p-3 p-lg-5 m-md-3 col-sm-7 col-md-8 col-lg-4  bg-secondary-acadima border-radius-lg shadow border">
+
+        <div class=" col-6 p-0 mb-0 mb-lg-5 mt-3 mt-md-auto mx-auto d-flex flex-column align-items-center">
+            <img src="{{ asset('store/Acadima/Acadima-Black.png') }}" alt="logo" width="100%" class="">
             
         </div>
 
@@ -166,7 +178,7 @@
 
                 <div class="text-center mt-1">
                     <span class="text-secondary">
-                        <a href="/login" class="text-pink font-weight-bold">
+                        <a href="/login" class="text-black font-weight-bold">
                             <!-- {{ trans('auth.login') }} -->
                               Login
                         </a>
@@ -175,6 +187,7 @@
 
             </div>
         </div>
+        
     </div>
 @endsection
 

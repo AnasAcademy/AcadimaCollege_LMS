@@ -8,6 +8,7 @@
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         font-family: sans-serif !important;
+        min-height: 98%;
     }
 
     #current-month-year {
@@ -206,13 +207,13 @@
 <script>
     function dateTimeFormat(timestamp) {
         const date = new Date(timestamp * 1000);
-        const year = date.getFullYear();
+        const year = date.getFullFullYear();
         const month = ('0' + (date.getMonth() + 1)).slice(-2);
         const day = ('0' + date.getDate()).slice(-2);
-
         return `${year}-${month}-${day}`;
     }
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         const calendarBody = $('#calendar-body');
         const bundlePopup = $('#bundlePopup');
         const currentMonthYear = $('#current-month-year');
@@ -224,7 +225,7 @@
 
         updateCalendar();
 
-        $('#prev-month').click(function() {
+        $('#prev-month').click(function () {
             if (currentMonth === 0) {
                 currentMonth = 11;
                 currentYear--;
@@ -234,7 +235,7 @@
             updateCalendar();
         });
 
-        $('#next-month').click(function() {
+        $('#next-month').click(function () {
             if (currentMonth === 11) {
                 currentMonth = 0;
                 currentYear++;
@@ -244,67 +245,61 @@
             updateCalendar();
         });
 
-
-
         function updateCalendar() {
-    currentMonthYear.text(`${currentYear}-${currentMonth + 1}`);
-    calendarBody.empty();
+            const monthNames = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
 
-    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    const firstDayOfWeek = new Date(currentYear, currentMonth, 1).getDay();
+            currentMonthYear.text(`${monthNames[currentMonth]} ${currentYear}`);
+            calendarBody.empty();
 
-    let currentDay = 1;
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+            const firstDayOfWeek = new Date(currentYear, currentMonth, 1).getDay();
 
-    for (let i = 0; currentDay <= daysInMonth; i++) {
-        const row = $('<tr>');
-        for (let j = 0; j < 7; j++) {
-            if ((i === 0 && j < firstDayOfWeek) || currentDay > daysInMonth) {
-                row.append('<td></td>');
-            } else {
-                const date = new Date(currentYear, currentMonth, currentDay);
-                const formattedDate = formatDate(date);
-                const allBundles = bundles.filter(bundle => formatDate(new Date(bundle.start_date * 1000)) === formattedDate);
-                
-                // Apply event-bg ONLY if the day has bundles
-                const dayClass = (allBundles.length > 0) ? 'day-with-bundle event-bg' : '';
+            let currentDay = 1;
 
-                let details = "";
-                for (const bundle of allBundles) {
-                    details = "lectures";
+            for (let i = 0; currentDay <= daysInMonth; i++) {
+                const row = $('<tr>');
+                for (let j = 0; j < 7; j++) {
+                    if ((i === 0 && j < firstDayOfWeek) || currentDay > daysInMonth) {
+                        row.append('<td></td>');
+                    } else {
+                        const date = new Date(currentYear, currentMonth, currentDay);
+                        const formattedDate = formatDate(date);
+                        const allBundles = bundles.filter(bundle => formatDate(new Date(bundle.start_date * 1000)) === formattedDate);
+
+                        const dayClass = (allBundles.length > 0) ? 'day-with-bundle event-bg' : '';
+
+                        row.append(`<td class="${dayClass}" data-date="${formattedDate}">
+                            ${currentDay}
+                            <p class='course-title'></p>
+                        </td>`);
+                        currentDay++;
+                    }
                 }
-
-                row.append(`<td class=" ${dayClass}" data-date="${formattedDate}">
-                    ${currentDay}
-                    <p class='course-title'></p>
-                </td>`);
-                currentDay++;
+                calendarBody.append(row);
             }
-        }
-        calendarBody.append(row);
-    }
 
-    // Click event for bundle days
-    $('.day-with-bundle').off('click').on('click', function() {
-        const date = $(this).data('date');
-        const bundlesData = bundles.filter(bundle => formatDate(new Date(bundle.start_date * 1000)) === date);
+            $('.day-with-bundle').off('click').on('click', function () {
+                const date = $(this).data('date');
+                const bundlesData = bundles.filter(bundle => formatDate(new Date(bundle.start_date * 1000)) === date);
 
-        let text = "";
-        for (const bundle of bundlesData) {
-            text += bundle.title + "<br>";
+                let text = "";
+                for (const bundle of bundlesData) {
+                    text += bundle.title + "<br>";
+                }
+                $('#bundleStartDate').html(`${text}`);
+                bundlePopup.modal('show');
+            });
         }
-        $('#bundleStartDate').html(`${text}`);
-        bundlePopup.modal('show');
-    });
-}
 
         function formatDate(date) {
-            const date2 = new Date(date);
             const year = date.getFullYear();
             const month = String(date.getMonth() + 1).padStart(2, "0");
             const day = String(date.getDate()).padStart(2, "0");
-            const formattedDate = `${year}-${month}-${day}`;
-
-            return formattedDate;
+            return `${year}-${month}-${day}`;
         }
     });
 </script>
+

@@ -108,7 +108,7 @@
 
                                 <div class="webinar-card-body w-100 d-flex flex-column bg-secondary-acadima">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <div class="d-flex align-items-center text-pink">
+                                        <div class="d-flex align-items-center text-black">
                                             <h3 class="font-16  font-weight-bold">{{ $orderItem->title }}</h3>
 
                                             @if ($order->has_overdue)
@@ -217,7 +217,7 @@
 
                             </div>
                             <div class="panel-section-card py-20 px-25 mt-20 shadow border">
-                                <h3 class="font-16 text-pink font-weight-bold mb-20">{{trans('panel.installment_schedule')}}</h3>
+                                <h3 class="font-16 text-black font-weight-bold mb-20">{{trans('panel.installment_schedule')}}</h3>
 
                                 <div class="row">
                                     <div class="col-12 ">
