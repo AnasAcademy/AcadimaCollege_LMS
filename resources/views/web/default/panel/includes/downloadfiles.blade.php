@@ -116,7 +116,7 @@
                         <div class="media-body">
                        <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Microsoft%20Teams%20Arabic.pdf"
                            target="_blank">
-                           <h5 class="font-16 mb-1 text-dark">Microsoft Teams Arabic<i class="feather icon-download-cloud float-right"></i></h5>
+                           <h5 class="font-16 mb-1 text-dark"> دليل مايكروسوفت تيمز - بالعربي <i class="feather icon-download-cloud float-right"></i></h5>
                        </a>
                         </div>
                     </li>
@@ -127,7 +127,7 @@
                         <div class="media-body">
                             <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Microsoft%20Teams%20English.pdf"
                            target="_blank">
-                        <h5 class="font-16 mb-1 text-dark">Microsoft Teams English<i class="feather icon-download-cloud float-right"></i></h5>
+                        <h5 class="font-16 mb-1 text-dark">Microsoft Teams Guide – English<i class="feather icon-download-cloud float-right"></i></h5>
                             </a>
                         </div>
                     </li>
@@ -138,7 +138,7 @@
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Outlook%20Arabic.pdf"
                            target="_blank">
-                        <h5 class="font-16 mb-1 text-dark">Outlook Arabic<i class="feather icon-download-cloud float-right"></i></h5></a>
+                        <h5 class="font-16 mb-1 text-dark"> دليل الايميل الأكاديمي (آوت لوك) – بالعربي <i class="feather icon-download-cloud float-right"></i></h5></a>
                         </div>
                     </li>
                     <li class="media mb-3">
@@ -148,7 +148,7 @@
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/Outlook%20English.pdf"
                            target="_blank">
-                        <h5 class="font-16 mb-1 text-dark">Outlook English<i class="feather icon-download-cloud float-right"></i></h5></a>
+                        <h5 class="font-16 mb-1 text-dark">Academic Email (Outlook) Guide - in English<i class="feather icon-download-cloud float-right"></i></h5></a>
                         </div>
                     </li>
                      <li class="media mb-3">
@@ -158,7 +158,7 @@
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/OneDrive%20English.pdf"
                            target="_blank">
-                        <h5 class="font-16 mb-1 text-dark">OneDrive English<i class="feather icon-download-cloud float-right"></i></h5></a>
+                        <h5 class="font-16 mb-1 text-dark"> دليل التخزين السحابي (ون درايف) – بالعربي<i class="feather icon-download-cloud float-right"></i></h5></a>
                         </div>
                     </li>
                      <li class="media">
@@ -168,7 +168,7 @@
                         <div class="media-body">
                              <a href="https://lms.anasacademy.uk/store/1162/%D9%85%D9%84%D9%81%D8%A7%D8%AA%20%D8%B4%D8%B1%D8%AD%20%D8%A7%D9%84%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/OneDrive%20Arabic.pdf"
                            target="_blank">
-                        <h5 class="font-16 mb-1 text-dark">OneDrive Arabic<i class="feather icon-download-cloud float-right"></i></h5></a>
+                        <h5 class="font-16 mb-1 text-dark">Cloud Storage (OneDrive) Guide – in English<i class="feather icon-download-cloud float-right"></i></h5></a>
                         </div>
                     </li>
                 </ul>
