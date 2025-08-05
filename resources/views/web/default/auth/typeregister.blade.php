@@ -407,6 +407,7 @@
                         </div>
                     @enderror
                 </div>
+                 <input type="hidden" name="installment_id" value="{{ request('installment_id') }}">
             </section>
             <div class="form-group d-flex flex-row justify-content-start mt-30">
                 <button type="submit" class="btn bg-button-acadima btn-lg cs-btn btn-border-radius mr-auto">

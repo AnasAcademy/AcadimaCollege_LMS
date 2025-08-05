@@ -28,6 +28,7 @@ use App\Models\Webinar;
 use App\Student;
 use App\BundleStudent;
 use App\Models\Bundle;
+use App\Http\Controllers\Panel\BundlesController;
 
 class RegisterController extends Controller
 {
@@ -326,130 +327,262 @@ class RegisterController extends Controller
     }
 
 
+    // public function register(Request $request)
+    // {
+    //     // get webinars, category, bundle and subcategory from session storage
+    //     if (session()->has(['main_category_id', 'sub_category_id', 'webinar_id', 'bundle_id'])) {
+    //         $request->merge([
+    //             'main_category_id' => session('main_category_id'),
+    //             'sub_category_id' => session('sub_category_id'),
+    //             'webinar_id' => session('webinar_id'),
+    //             'bundle_id' => session('bundle_id'),
+    //         ]);
+    //     }
+
+    //     $this->validator($request->all())->validate();
+
+    //     [$user, $data] = $this->create($request->all());
+
+    //     $student = Student::create([
+    //         'user_id' => $user->id,
+    //         'en_name' => $data['en_name'],
+    //         'email' => $data['email'],
+    //         'phone' => $data['mobile'],
+    //         'mobile' => $data['mobile'],
+    //         // 'status' => 'pending'
+    //     ]);
+
+    //     $studentBundle = BundleStudent::create(['student_id' => $student->id, 'bundle_id' => $data['bundle_id'], 'status' => 'applying']);
+
+    //     event(new Registered($user));
+
+    //     $notifyOptions = [
+    //         '[u.name]' => $user->en_name,
+    //         '[u.role]' => trans("update.role_{$user->role_name}"),
+    //         '[time.date]' => dateTimeFormat($user->created_at, 'j M Y H:i'),
+    //     ];
+
+    //     sendNotification("new_registration", $notifyOptions, 1);
+
+    //     $registerMethod = getGeneralSettings('register_method') ?? 'mobile';
+
+    //     $value = $request->get($registerMethod);
+    //     if ($registerMethod == 'mobile') {
+    //         $value = $request->get('country_code') . ltrim($request->get('mobile'), '0');
+    //     }
+
+    //     $referralCode = $request->get('referral_code', null);
+    //     if (!empty($referralCode)) {
+    //         session()->put('referralCode', $referralCode);
+    //     }
+
+    //     // $verificationController = new VerificationController();
+    //     // $checkConfirmed = $verificationController->checkConfirmed($user, $registerMethod, $value);
+
+    //     $referralCode = $request->get('referral_code', null);
+
+    //     // if ($checkConfirmed['status'] == 'send') {
+
+    //     //     if (!empty($referralCode)) {
+    //     //         session()->put('referralCode', $referralCode);
+    //     //     }
+
+    //     //     return redirect('/verification');
+    //     // } elseif ($checkConfirmed['status'] == 'verified') {
+    //     $this->guard()->login($user);
+
+    //     $enableRegistrationBonus = false;
+    //     $registrationBonusAmount = null;
+    //     $registrationBonusSettings = getRegistrationBonusSettings();
+    //     if (!empty($registrationBonusSettings['status']) and !empty($registrationBonusSettings['registration_bonus_amount'])) {
+    //         $enableRegistrationBonus = true;
+    //         $registrationBonusAmount = $registrationBonusSettings['registration_bonus_amount'];
+    //     }
+
+
+    //     $user->update([
+    //         'enable_registration_bonus' => $enableRegistrationBonus,
+    //         'registration_bonus_amount' => $registrationBonusAmount,
+    //     ]);
+
+    //     $registerReward = RewardAccounting::calculateScore(Reward::REGISTER);
+    //     RewardAccounting::makeRewardAccounting($user->id, $registerReward, Reward::REGISTER, $user->id, true);
+
+    //     if (!empty($referralCode)) {
+    //         Affiliate::storeReferral($user, $referralCode);
+    //     }
+
+    //     $registrationBonusAccounting = new RegistrationBonusAccounting();
+    //     $registrationBonusAccounting->storeRegistrationBonusInstantly($user);
+
+    //     if ($response = $this->registered($request, $user)) {
+    //         return $response;
+    //     }
+    //     $data['title'] = "Create a new account";
+    //     $data['body'] = " Hi, $user->en_name
+    //                         <br>
+    //                         Congratulations, your Acadima College account has been created.
+    //                         <br>
+    //                         You now have access to your personal student dashboard, where you can explore available programs, manage your enrolment, and access course materials once you're registered. 
+    //                         <br>
+    //                         Need help or have questions? Our support team is here to assist you—reach out anytime at lms@acadimacollege.com
+    //                         <br>
+    //                         Welcome to the Acadima College community. We’re excited to support you on your learning journey! 
+    //                         <br>
+    //                         You can log in through this link
+    //                         <a href='https://lms.acadimacollege.com/login' class='btn btn-danger'>Login </a>
+    //                         <br>
+    //                         Using this email and password
+    //                         <br>
+    //                         <span style='font-weight:bold;'>Email Address : </span> $user->email
+    //                         <br>
+    //                          <span style='font-weight:bold;'>Password : </span>" . $request['password'] .
+    //                     "<br> Warm regards, 
+    //                     <br> Acadima College Admission Team 
+    //             ";
+    //     // if (!empty($user) and !empty($user->email) and env('APP_ENV') == 'production') {
+    //     //     Mail::to($user->email)->send(new SendNotifications(['title' => $data['title'] ?? '', 'message' => $data['body'] ?? '']));
+    //     // }
+
+    //     //    dd("stop here");
+    //     // if(!empty($request->webinar_id)){
+    //     //     return redirect("/webinars/".session()->get('webinar_id')."/apply");
+    //     // }
+    //     return $request->wantsJson()
+    //         ? new JsonResponse([], 201)
+    //         : redirect(($this->redirectPath() . "?bundle_id=$request->bundle_id&&addition_bundle_id=$request->addition_bundle_id&&webinar_id=$request->webinar_id"));
+    //     // }
+    // }
+
     public function register(Request $request)
-    {
-        // get webinars, category, bundle and subcategory from session storage
-        if (session()->has(['main_category_id', 'sub_category_id', 'webinar_id', 'bundle_id'])) {
-            $request->merge([
-                'main_category_id' => session('main_category_id'),
-                'sub_category_id' => session('sub_category_id'),
-                'webinar_id' => session('webinar_id'),
-                'bundle_id' => session('bundle_id'),
-            ]);
-        }
-
-        $this->validator($request->all())->validate();
-
-        [$user, $data] = $this->create($request->all());
-
-        $student = Student::create([
-            'user_id' => $user->id,
-            'en_name' => $data['en_name'],
-            'email' => $data['email'],
-            'phone' => $data['mobile'],
-            'mobile' => $data['mobile'],
-            // 'status' => 'pending'
+{
+    // Merge session values into the request
+    if (session()->has(['main_category_id', 'sub_category_id', 'webinar_id', 'bundle_id'])) {
+        $request->merge([
+            'main_category_id' => session('main_category_id'),
+            'sub_category_id' => session('sub_category_id'),
+            'webinar_id' => session('webinar_id'),
+            'bundle_id' => session('bundle_id'),
+            'installment_id' => session('installment_id')
         ]);
-
-        $studentBundle = BundleStudent::create(['student_id' => $student->id, 'bundle_id' => $data['bundle_id'], 'status' => 'applying']);
-
-        event(new Registered($user));
-
-        $notifyOptions = [
-            '[u.name]' => $user->en_name,
-            '[u.role]' => trans("update.role_{$user->role_name}"),
-            '[time.date]' => dateTimeFormat($user->created_at, 'j M Y H:i'),
-        ];
-
-        sendNotification("new_registration", $notifyOptions, 1);
-
-        $registerMethod = getGeneralSettings('register_method') ?? 'mobile';
-
-        $value = $request->get($registerMethod);
-        if ($registerMethod == 'mobile') {
-            $value = $request->get('country_code') . ltrim($request->get('mobile'), '0');
-        }
-
-        $referralCode = $request->get('referral_code', null);
-        if (!empty($referralCode)) {
-            session()->put('referralCode', $referralCode);
-        }
-
-        // $verificationController = new VerificationController();
-        // $checkConfirmed = $verificationController->checkConfirmed($user, $registerMethod, $value);
-
-        $referralCode = $request->get('referral_code', null);
-
-        // if ($checkConfirmed['status'] == 'send') {
-
-        //     if (!empty($referralCode)) {
-        //         session()->put('referralCode', $referralCode);
-        //     }
-
-        //     return redirect('/verification');
-        // } elseif ($checkConfirmed['status'] == 'verified') {
-        $this->guard()->login($user);
-
-        $enableRegistrationBonus = false;
-        $registrationBonusAmount = null;
-        $registrationBonusSettings = getRegistrationBonusSettings();
-        if (!empty($registrationBonusSettings['status']) and !empty($registrationBonusSettings['registration_bonus_amount'])) {
-            $enableRegistrationBonus = true;
-            $registrationBonusAmount = $registrationBonusSettings['registration_bonus_amount'];
-        }
-
-
-        $user->update([
-            'enable_registration_bonus' => $enableRegistrationBonus,
-            'registration_bonus_amount' => $registrationBonusAmount,
-        ]);
-
-        $registerReward = RewardAccounting::calculateScore(Reward::REGISTER);
-        RewardAccounting::makeRewardAccounting($user->id, $registerReward, Reward::REGISTER, $user->id, true);
-
-        if (!empty($referralCode)) {
-            Affiliate::storeReferral($user, $referralCode);
-        }
-
-        $registrationBonusAccounting = new RegistrationBonusAccounting();
-        $registrationBonusAccounting->storeRegistrationBonusInstantly($user);
-
-        if ($response = $this->registered($request, $user)) {
-            return $response;
-        }
-        $data['title'] = "Create a new account";
-        $data['body'] = " Hi, $user->en_name
-                            <br>
-                            Congratulations, your Acadima College account has been created.
-                            <br>
-                            You now have access to your personal student dashboard, where you can explore available programs, manage your enrolment, and access course materials once you're registered. 
-                            <br>
-                            Need help or have questions? Our support team is here to assist you—reach out anytime at lms@acadimacollege.com
-                            <br>
-                            Welcome to the Acadima College community. We’re excited to support you on your learning journey! 
-                            <br>
-                            You can log in through this link
-                            <a href='https://lms.acadimacollege.com/login' class='btn btn-danger'>Login </a>
-                            <br>
-                            Using this email and password
-                            <br>
-                            <span style='font-weight:bold;'>Email Address : </span> $user->email
-                            <br>
-                             <span style='font-weight:bold;'>Password : </span>" . $request['password'] .
-                        "<br> Warm regards, 
-                        <br> Acadima College Admission Team 
-                ";
-        // if (!empty($user) and !empty($user->email) and env('APP_ENV') == 'production') {
-        //     Mail::to($user->email)->send(new SendNotifications(['title' => $data['title'] ?? '', 'message' => $data['body'] ?? '']));
-        // }
-
-        //    dd("stop here");
-        // if(!empty($request->webinar_id)){
-        //     return redirect("/webinars/".session()->get('webinar_id')."/apply");
-        // }
-        return $request->wantsJson()
-            ? new JsonResponse([], 201)
-            : redirect(($this->redirectPath() . "?bundle_id=$request->bundle_id&&addition_bundle_id=$request->addition_bundle_id&&webinar_id=$request->webinar_id"));
-        // }
     }
+
+    // Validate user input
+    $this->validator($request->all())->validate();
+
+    // Create user and collect data
+    [$user, $data] = $this->create($request->all());
+
+    // Create student profile
+    $student = Student::create([
+        'user_id' => $user->id,
+        'en_name' => $data['en_name'],
+        'email' => $data['email'],
+        'phone' => $data['mobile'],
+        'mobile' => $data['mobile'],
+    ]);
+
+    // Link student with bundle
+    BundleStudent::create([
+        'student_id' => $student->id,
+        'bundle_id' => $data['bundle_id'],
+        'status' => 'applying'
+    ]);
+
+    // Fire registration event
+    event(new Registered($user));
+
+    // Send notification to admin
+    $notifyOptions = [
+        '[u.name]' => $user->en_name,
+        '[u.role]' => trans("update.role_{$user->role_name}"),
+        '[time.date]' => dateTimeFormat($user->created_at, 'j M Y H:i'),
+    ];
+    sendNotification("new_registration", $notifyOptions, 1);
+
+    // Handle referral
+    $registerMethod = getGeneralSettings('register_method') ?? 'mobile';
+    $value = $request->get($registerMethod);
+    if ($registerMethod == 'mobile') {
+        $value = $request->get('country_code') . ltrim($request->get('mobile'), '0');
+    }
+
+    $referralCode = $request->get('referral_code', null);
+    if (!empty($referralCode)) {
+        session()->put('referralCode', $referralCode);
+    }
+
+    // Log in the user
+    $this->guard()->login($user);
+
+    // Registration bonus
+    $enableRegistrationBonus = false;
+    $registrationBonusAmount = null;
+    $registrationBonusSettings = getRegistrationBonusSettings();
+    if (!empty($registrationBonusSettings['status']) && !empty($registrationBonusSettings['registration_bonus_amount'])) {
+        $enableRegistrationBonus = true;
+        $registrationBonusAmount = $registrationBonusSettings['registration_bonus_amount'];
+    }
+
+    $user->update([
+        'enable_registration_bonus' => $enableRegistrationBonus,
+        'registration_bonus_amount' => $registrationBonusAmount,
+    ]);
+
+    // Reward points
+    $registerReward = RewardAccounting::calculateScore(Reward::REGISTER);
+    RewardAccounting::makeRewardAccounting($user->id, $registerReward, Reward::REGISTER, $user->id, true);
+
+    // Store referral
+    if (!empty($referralCode)) {
+        Affiliate::storeReferral($user, $referralCode);
+    }
+
+    // Give bonus
+    $registrationBonusAccounting = new RegistrationBonusAccounting();
+    $registrationBonusAccounting->storeRegistrationBonusInstantly($user);
+
+    // Optional: additional notification
+    if ($response = $this->registered($request, $user)) {
+        return $response;
+    }
+
+    // Send welcome email
+    $data['title'] = "Create a new account";
+    $data['body'] = "Congratulations, your account has been created in acadima.
+        <br><br>You can log in through this link
+        <a href='https://lms.acadimacollege.com/login' class='btn btn-danger'>Login</a><br><br>
+        Using this email and password<br>
+        <span style='font-weight:bold;'>Email Address:</span> {$user->email}<br>
+        <span style='font-weight:bold;'>Password:</span> {$request['password']}<br>";
+
+    // if (!empty($user->email) && env('APP_ENV') == 'production') {
+    //     Mail::to($user->email)->send(new SendNotifications([
+    //         'title' => $data['title'],
+    //         'message' => $data['body']
+    //     ]));
+    // }
+
+    // If registering for webinar
+    if (!empty($request->webinar_id)) {
+        return redirect("/webinars/" . $request->webinar_id . "/apply");
+    }
+
+    // If registering via installment
+    if (!empty($request->installment_id)) {
+        return redirect("/installments/{$request->installment_id}?item={$request->bundle_id}&item_type=bundles");
+    }
+
+    // Now call purchase_bundle and let it handle payment redirect
+    $request->merge([
+        'item' => $request->bundle_id,
+        'item_type' => 'bundles',
+    ]);
+
+    return app()->call(
+        [app(BundlesController::class), 'purchase_bundle_cache'],
+        ['request' => $request]
+    );
+}
+
 }

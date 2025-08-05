@@ -738,6 +738,60 @@ class BundlesController extends Controller
             }
         }
     }
+       public function purchase_bundle_cache(Request $request)
+    {
+        $user = auth()->user();
+
+        if (!$user) {
+            abort(403, 'Unauthorized');
+        }
+
+        $bundleId =$request->item;
+       
+        $bundle = Bundle::find($bundleId);
+      // dd( $bundle);
+        if (empty($bundle)) {
+            abort(404, 'Bundle not found');
+        }
+
+        $paymentChannels = PaymentChannel::where('status', 'active')->get();
+
+        // Pricing calculation
+        $calculate = $this->calculatePrice(
+            $bundle,
+            $installment_payment_id = null,
+            $user,
+            $discountCoupon = null
+        );
+
+        // Order creation
+        $order = $this->createOrderAndOrderItems(
+            $bundle,
+            $installment_payment_id = null,
+            $calculate,
+            $user,
+            $discountCoupon = null
+        );
+
+        if (!empty($order) && $order->total_amount > 0) {
+            $razorpay = false;
+            $isMultiCurrency = !empty(getFinancialCurrencySettings('multi_currency'));
+
+            foreach ($paymentChannels as $paymentChannel) {
+                if (
+                    $paymentChannel->class_name == 'Razorpay' &&
+                    (!$isMultiCurrency || in_array(currency(), $paymentChannel->currencies))
+                ) {
+                    $razorpay = true;
+                }
+            }
+
+            return redirect('/payment/' . $order->id);
+        }
+
+        // Handle free orders
+        return $this->handlePaymentOrderWithZeroTotalAmount($order);
+    }
     private function handleSelectedInstallment($user, $order, $installment)
     {
         $selected = SelectedInstallment::query()->updateOrCreate([
